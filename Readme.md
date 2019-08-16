@@ -42,7 +42,7 @@ Se puede utilizar el **Playground de GraphQL** para interactuar con la API.<br>
 
 ### Ejecutar la siguiente Query para ver el codpais y el nombpais de los países almacenados en la base:
 
-```json
+```
 query{
   obtenerPaises{
     codpais
@@ -52,7 +52,7 @@ query{
 ```
 
 ### Ejecutar la siguiente Mutation para crear un pais (Bélgica):
-```json
+```
 mutation {
 	crearPais(input:{
 		codpais: "BEL"
