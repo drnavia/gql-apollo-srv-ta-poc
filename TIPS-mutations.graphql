@@ -1,0 +1,220 @@
+--- CREAR UN PAIS (ARGENTINA) ---
+mutation {
+	crearPais(input:{
+		codpais: "ARG"
+		nombpais: "Argentina"
+		prefpais: 54
+		continente: AMERICA
+		estados: [
+			{
+				codestado: "CABA"
+				nombestado: "Ciudad Autónoma de Buenos Aires"
+				localidades: [
+					{ 
+						codlocalidad: "ALG"
+						nomblocalidad: "Almagro"
+					}
+				]
+			},
+			{
+				codestado: "BSAS"
+				nombestado: "Buenos Aires"
+				localidades: [
+					{
+						codlocalidad: "RMJS"
+						nomblocalidad: "Ramos Mejia"
+					}
+				]
+			}
+		]
+	}) {
+		id
+		codpais
+		nombpais
+		estados {
+			codestado
+			nombestado
+			localidades {
+				codlocalidad
+				nomblocalidad
+			}
+		}
+	}
+}
+--- CREAR UN PAIS (BRASIL) ---
+mutation {
+	crearPais(input:{
+		codpais: "BRA"
+		nombpais: "Brasil"
+		prefpais: 55
+		continente: AMERICA
+		estados: [
+			{
+				codestado: "SNP"
+				nombestado: "San Pablo"
+			},
+			{
+				codestado: "RDJ"
+				nombestado: "Rio de Janeiro"
+			}
+		]
+	}) {
+		id
+		codpais
+		nombpais
+		estados {
+			codestado
+			nombestado
+			localidades {
+				codlocalidad
+				nomblocalidad
+			}
+		}
+	}
+}
+
+
+--- ACTUALIZAR UN PAIS ---
+mutation {
+	actualizarPais(input:{
+    id: "5d1e3b5a17d8f5002a1eed29"
+		codpais: "ARG"
+		nombpais: "Argentina"
+		prefpais: 54
+		continente: AMERICA
+		estados: [
+			{
+				codestado: "CABA"
+				nombestado: "Ciudad Autónoma de Buenos Aires"
+				localidades: [
+					{ 
+						codlocalidad: "ALG"
+						nomblocalidad: "Almagro"
+					}
+				]
+			},
+			{
+				codestado: "BSAS"
+				nombestado: "Buenos Aires"
+				localidades: [
+					{
+						codlocalidad: "RMJS"
+						nomblocalidad: "Ramos Mejia"
+					}
+				]
+			}
+		]
+	}) {
+		id
+		codpais
+		nombpais
+		estados {
+			codestado
+			nombestado
+			localidades {
+				codlocalidad
+				nomblocalidad
+			}
+		}
+	}
+}
+
+--- ELIMINAR UN PAIS ---
+mutation {
+    eliminarPais(id: "5d09845e942c1e9140f18f7f")
+}
+---
+
+### CREAR EL RESTO DE LOS PAISES DE AMERICA DEL SUR ###
+
+--- CREAR UN PAIS (CHILE) ---
+mutation {
+	crearPais(input:{
+		codpais: "CHL"
+		nombpais: "Chile"
+		prefpais: 56
+		continente: AMERICA
+	}) {
+		id
+		codpais
+		nombpais
+	}
+}
+--- CREAR UN PAIS (URUGUAY) ---
+mutation {
+	crearPais(input:{
+		codpais: "URY"
+		nombpais: "Uruguay"
+		prefpais: 594
+		continente: AMERICA
+	}) {
+		id
+		codpais
+		nombpais
+	}
+}
+--- CREAR UN PAIS (PARAGUAY) ---
+mutation {
+	crearPais(input:{
+		codpais: "PRY"
+		nombpais: "Paraguay"
+		prefpais: 595
+		continente: AMERICA
+	}) {
+		id
+		codpais
+		nombpais
+	}
+}
+--- CREAR UN PAIS (COLOMBIA) ---
+mutation {
+	crearPais(input:{
+		codpais: "COL"
+		nombpais: "Colombia"
+		prefpais: 57
+		continente: AMERICA
+	}) {
+		id
+		codpais
+		nombpais
+	}
+}
+--- CREAR UN PAIS (BOLIVIA) ---
+mutation {
+	crearPais(input:{
+		codpais: "BOL"
+		nombpais: "Bolivia"
+		prefpais: 591
+		continente: AMERICA
+	}) {
+		id
+		codpais
+		nombpais
+	}
+}
+--- CREAR UN PAIS (PERU) ---
+mutation {
+	crearPais(input:{
+		codpais: "PER"
+		nombpais: "Perú"
+		prefpais: 51
+		continente: AMERICA
+	}) {
+		id
+		codpais
+		nombpais
+	}
+}
+--- CREAR UN PAIS (ECUADOR) ---
+mutation {
+	crearPais(input:{
+		codpais: "ECU"
+		nombpais: "Ecuador"
+		prefpais: 593
+		continente: AMERICA
+	}) {
+		id
+		codpais
+		nombpais
+	}
+}

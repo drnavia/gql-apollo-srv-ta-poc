@@ -1,0 +1,83 @@
+--- CONSULTAR TODOS LOS PAISES ---
+query {
+	obtenerPaises{
+        id
+        codpais
+        nombpais
+        estados {
+            nombestado
+            localidades {
+                nomblocalidad
+            }
+        }
+    }
+}
+
+--- CONSULTAR TODOS LOS PAISES (CON LIMITE 3) ---
+query {
+    obtenerPaises(limite: 3){
+        id
+        codpais
+        nombpais
+    }
+}k
+
+--- CONSULTAR UN PAIS ---
+query {
+    obtenerPais(id: "5d1e3c9317d8f5002a1eed2a") {
+        id
+        codpais
+        nombpais
+        estados {
+            nombestado
+        }
+    }
+}
+
+--- CONSULTA CON ALIAS ---
+query {
+    uno: obtenerPais(id: "5d1e3c9317d8f5002a1eed2a") {
+        id
+        codpais
+        nombpais
+        estados {
+            nombestado
+        }
+    }
+    dos: obtenerPais(id: "5d1e3d7517d8f5002a1eed2d") {
+        id
+        codpais
+        nombpais
+        estados {
+            nombestado
+        }
+    }
+}
+
+--- CONSULTA CON FRAGMENTOS ---
+query {
+    uno: obtenerPais(id: "5d1e3c9317d8f5002a1eed2a") {
+        ...paises
+        prefpais
+    }
+    dos: obtenerPais(id: "5d1e3d7517d8f5002a1eed2d") {
+        ...paises
+    }
+}
+fragment paises on Pais {
+    id
+    codpais
+    nombpais
+    estados {
+        nombestado
+    }
+}
+
+--- CONSULTAR TOTAL DE PAISES (con limites) ---
+query {
+    obtenerPaises(limite: 3, offset: 3){
+        nombpais
+    }
+    totalPaises
+}
+---

@@ -1,0 +1,68 @@
+type Pais {
+    id: ID
+    codpais:  String
+    nombpais: String
+    prefpais: Int
+    continente: TipoContinente
+    estados:    [Estado]
+}
+""" Asigna la categoria del Continente """
+enum TipoContinente {
+    AFRICA
+    AMERICA
+    ASIA
+    EUROPA
+    OCEANIA
+}
+type Estado {
+    id: ID
+    codestado:   String
+    nombestado:  String
+    localidades: [Localidad]
+}
+type Localidad {
+    id: ID
+    codlocalidad:  String
+    nomblocalidad: String
+}
+
+""" Mutations para Consultar Datos """
+type Query {
+    # Paises
+    obtenerPaises(limite: Int, offset: Int) : [Pais]
+    obtenerPais(id: ID) : Pais
+    totalPaises: String
+}
+
+input EstadoInput {
+    id: ID
+    codestado:   String!
+    nombestado:  String!
+    localidades: [LocalidadInput]
+}
+input LocalidadInput {
+    id: ID
+    codlocalidad:  String!
+    nomblocalidad: String!
+}
+""" Campos para los Paises Nuevos """
+input PaisInput {
+    id: ID
+    codpais:  String!
+    nombpais: String!
+    prefpais: Int
+    continente: TipoContinente!
+    estados:    [EstadoInput]
+}
+
+""" Mutations para Crear Nuevos Datos """
+type Mutation {
+    # Nombre del Resolver, Input con Datos y Valor que retorna
+    # Paises
+    """ Te permite crear Nuevos Paises """
+    crearPais(input: PaisInput) : Pais
+    """ Te permite Actualizar un Pais """
+    actualizarPais(input: PaisInput) : Pais
+    """ Te permite Eliminar un Pais """
+    eliminarPais( id: ID! ) : String
+}
