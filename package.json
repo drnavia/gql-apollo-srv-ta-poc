@@ -24,7 +24,7 @@
         "graphql": "^14.2.1",
         "graphql-import": "^0.7.1",
         "graphql-tools": "^4.0.4",
-        "mongoose": "^5.5.7",
+        "mongoose": "^5.7.5",
         "nodemon": "^1.19.1"
     },
     "devDependencies": {
